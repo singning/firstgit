@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.短路运算符之逻辑与和逻辑或
+        // 逻辑与
+        // 报错 因为someNotDefindedValue未定义
+        // var found = true;
+        // var result = found && someNotDefindedValue;
+        // console.log(result);
+
+        // 不报错 因为逻辑与存在短路操作  当第一个值为false时 会自动判定为false
+        // var found = false;
+        // var result = found && someNotDefindedValue;
+        // console.log(result);
+
+        // 逻辑或
+        // 报错 因为found为false执行 检查someNotDefindedValue结果 发现未定义 抛出错误
+        // var found = false;
+        // var result = found || someNotDefindedValue;
+        // console.log(result);
+
+        // 不报错 当第一个值为true时  直接将result 赋值为第一个值 发生了短路操作
+        // var found = true;
+        // var result = found || someNotDefindedValue;
+        // console.log(result);
+
+        // 2.一元加操作符与一元减操作符
+        // 一元加减运算符会将字符型数字转化为数值型数字
+        // 减法比较特殊 写到前面是变为负数 写到后面可以自动将字符型转为数值型 加法则不行
+        // var num1 = "1" + 1; //11
+        // var num2 = +"1" + 1; //2
+        // var num3 = "1" - 1; //0
+        // var num4 = -"1" - 1; //-2
+
+        // 3.Number() 和 toString() 方法
+        // var num1 = "3"; 
+        // var isTrue = false;
+        // console.log(Number(num1), isTrue.toString(), Number("d"));
+
+        // 4.逗号操作符
+        // 逗号操作符除了可以一次初始化多个变量 还可以进行赋值操作 总会返回逗号表达式中的最后一项
+        // var num1 = 1,
+        //     num2 = 2,
+        //     num3 = 3;
+        // var num = (1, 5, 6, 7, 0); //0  
+        // console.log(num1, num2, num3, num);
+
+        // 5.label语句和break、continue语句
+        // var num = 0;
+        // overFor:
+        //     for (var i = 0; i < 10; i++) {
+        //         for (var j = 0; j < 10; j++) {
+        //             if (i == 5 && j == 5) {
+        //                 // 退出循环至overFor处  即不仅仅退出内存循环同时也终止了外层循环
+        //                 break overFor;
+        //             }
+        //             num++;
+        //         }
+
+        //     }
+        // console.log(num); // 55
+        // 不使用label语句
+        // var num = 0;
+        // for (var i = 0; i < 10; i++) {
+        //     for (var j = 0; j < 10; j++) {
+        //         if (i == 5 && j == 5) {
+        //             // 退出内层循环  继续执行外层循环 即100次循环一共少了5次
+        //             break;
+        //         }
+        //         num++;
+        //     }
+        // }
+        // console.log(num); //95
+
+        // 6.switch语句基本用法
+        // var score = 80;
+        // switch (true) {
+        //     case score > 85:
+        //         console.log("优秀");
+        //         break;
+        //     case score > 75 && score <= 85:
+        //         console.log("良好");
+        //         break;
+        //     case score >= 60 && score <= 75:
+        //         console.log("合格"); 
+        //         break;
+        //     case score < 60:
+        //         console.log("不合格");
+        //         break;
+        //     default:
+        //         console.log("没有成绩");
+        // }
+
+        // switch (5) {
+        //     case 1:
+        //         console.log("星期一");
+        //         break;
+        //     case 2:
+        //         console.log("星期二");
+        //         break;
+        //     case 3:
+        //         console.log("星期三");
+        //         break;
+        //     case 4:
+        //         console.log("星期四");
+        //         break;
+        //     case 5:
+        //         console.log("星期五");
+        //         break;
+        //     case 6:
+        //         console.log("星期六");
+        //         break;
+        //     case 7:
+        //         console.log("星期日");
+        //         break;
+        //     default:
+        //         break;
+        // }
+
+        // 7.arguments伪数组基本使用 不确定实参数量时可以使用
+        // function add() {
+        //     var sum = 0;
+        //     console.log(arguments);
+        //     for (var i = 0; i < arguments.length; i++) {
+        //         sum += arguments[i];
+        //     }
+        //     return sum;
+        // };
+        // var result1 = add(10, 20, 30);
+        // var result2 = add(100, 200, 300);
+        // console.log(result1, result2);
+
+        // 8.
+    </script>
+</body>
+
+</html>

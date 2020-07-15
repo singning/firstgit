@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 这里使用对象中的valueOf方法 得到函数返回值-1 获得一个可操作的值
+        var o = {
+            valueOf: function() {
+                return -1;
+            }
+        }
+        console.log(o.valueOf());
+        console.log(o);
+        o--;
+        console.log(o);
+        // console.log(o--);
+    </script>
+</body>
+
+</html>
