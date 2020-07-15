@@ -138,7 +138,67 @@
         // var result2 = add(100, 200, 300);
         // console.log(result1, result2);
 
-        // 8.
+        // 8.函数之传递参数  按值传递
+        // function someone(obj) {
+        //     obj.name = "zhangsan";
+        // }
+        // var person = new Object();
+        // someone(person);
+        // console.log(person.name); //张三
+
+        // 按值传递 函数内部修改形参属性值 不会影响到全局对象
+        // function newName(obj) {
+        //     obj.name = "zhangsan"; 
+        //     obj = new Object(); //新的对象可以看做 局部变量 函数调用结束后进行销毁
+        //     obj.name = "lisi";
+        // }
+        // var person = new Object();
+        // newName(person);
+        // console.log(person);
+
+        // 9.块级作用域
+        // if (true) {
+        //     var num = 10;
+        // }
+        // console.log(num); //10
+
+        // function add(num1, num2) {
+        //     var sum = num1 + num2;
+        //     return sum;
+        // }
+        // var result = add(10, 20);
+        // console.log(result);
+        // console.log(sum);
+        // 不使用var声明 直接赋值 会导致变量成为全局变量
+        // function add(num1, num2) {
+        //     sum = num1 + num2;
+        //     return sum;
+        // }
+        // var result = add(10, 20);
+        // console.log(result);
+        // console.log(sum);
+
+        // var obj = "lisi";
+
+        // function result() {
+        //     var obj = {
+        //         name: "zhangsan"
+        //     };
+        //     return obj;
+        // }
+        // let res = result();
+        // console.log(res);
+
+        //10.手动解除引用 以便垃圾回收在下次运行时将值所占的内存回收
+        // function peroson(name) {
+        //     var localObj = new Object();
+        //     localObj.name = name;
+        //     return localObj;
+        // };
+        // var globalObj = peroson("张三");
+        // // 手动解除globalObj值的引用
+        // globalObj = null;
+        // console.log(globalObj);
     </script>
 </body>
 
